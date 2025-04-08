@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:NQueensCamera.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NQueensCamera.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Janela Principal"
+        MinWidth="800" MinHeight="450">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Window.Content>
+        <Grid RowDefinitions="25* 50* 25*" ColumnDefinitions="25* 50* 25*" Background="#0f0f0f">
+            
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#0dc400" FontSize="35" FontFamily="{StaticResource KodeMonoFont}" FontWeight="Bold" Text="{Binding Title}"></TextBlock>
+            
+            <Grid Grid.Row="1" Grid.Column="1" RowDefinitions="* * *">
+                <Button Grid.Row="0" HorizontalAlignment="Center" Foreground="#0a8f01" FontSize="25" FontFamily="{StaticResource KodeMonoFont}" Padding="10" Background="#525151" CornerRadius="0" Command="{Binding OpenNewBasicMethodsWindowCommand}">Métodos Básicos</Button>
+                <Button Grid.Row="1" HorizontalAlignment="Center" Foreground="#0a8f01" FontSize="25" FontFamily="{StaticResource KodeMonoFont}" Padding="10" Background="#525151" CornerRadius="0" Command="{Binding OpenNewGeneticAlgorithmsWindowCommand}" IsEnabled="False">Algoritmos Genéticos</Button>
+                <Button Grid.Row="2" HorizontalAlignment="Center" Foreground="#0a8f01" FontSize="25" FontFamily="{StaticResource KodeMonoFont}" Padding="10" Background="#525151" CornerRadius="0" Command="{Binding OpenNewAboutTheSystemWindowCommand}">Sobre o Sistema</Button>
+            </Grid>
+        </Grid>
+        
+        
+    </Window.Content>
+    
+    
+
+</Window>

@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:NQueensCamera.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NQueensCamera.Views.AboutTheSystemWindow"
+        x:DataType="vm:AboutTheSystemViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Sobre o Sistema"
+        MinWidth="800" MinHeight="450">
+
+        <Design.DataContext>
+                <vm:AboutTheSystemViewModel/>
+        </Design.DataContext>
+        
+        <Window.Content>
+                <Grid RowDefinitions="25* 60* 15*" ColumnDefinitions="25* 50* 25*" Background="#0f0f0f">
+            
+                        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#0dc400" FontSize="35" FontFamily="{StaticResource KodeMonoFont}" FontWeight="Bold" Text="{Binding Title}" ></TextBlock>
+                        
+                        <TextBlock Grid.Row="1" Grid.Column="1" Foreground="#0dc400" FontSize="15" FontFamily="{StaticResource KodeMonoFont}" TextWrapping="Wrap" Padding="20">
+                                Problema: Algoritmo baseado em N-Rainhas para a detecção de objetos em movimento em redes distribuídas de sensores sem fio.
+                                O problema consiste em utilizar o menor número possível de sensores para cobrir o máximo de locais possíveis, sem que um sensor sobreponha a área já coberta por outro, dessa forma é possível minimizar o número de sensores usados ao mesmo tempo que maximiza a eficiência.
+                        </TextBlock>
+                        
+                        <Grid Grid.Row="2" Grid.Column="1" RowDefinitions="* *">
+                                <TextBlock Grid.Row="0" TextAlignment="Center" Foreground="#0dc400" FontFamily="{StaticResource KodeMonoFont}" Padding="20 0" TextWrapping="Wrap">Luís Eduardo Braga Rabelo</TextBlock>
+                                <TextBlock Grid.Row="1" TextAlignment="Center" Foreground="#0dc400" FontFamily="{StaticResource KodeMonoFont}" Padding="20 0" TextWrapping="Wrap">Victoria Alline Félix Leite</TextBlock>  
+                        </Grid> 
+         
+                         
+                </Grid>
+        </Window.Content>
+        
+</Window>

@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:NQueensCamera.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NQueensCamera.Views.BasicMethodsWindow"
+        x:DataType="vm:BasicMethodsViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Métodos Básicos"
+        MinWidth="800" MinHeight="450">
+        
+        <Design.DataContext>
+                <vm:BasicMethodsViewModel/>
+        </Design.DataContext>
+
+        <Window.Content>
+                <Grid RowDefinitions="25* 50* 25*" ColumnDefinitions="25* 50* 25*" Background="#0f0f0f">
+                        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#0dc400" FontSize="35" FontFamily="{StaticResource KodeMonoFont}" FontWeight="Bold"  Text="{Binding Title}" ></TextBlock>
+        
+                        <Grid Grid.Row="1" Grid.Column="1" RowDefinitions="* * * *" ColumnDefinitions="* *">
+                                <RadioButton Grid.Row="0" Grid.Column="0" Name="InsertParameters" GroupName="ParametersOption" Content="Inserir Paramêtros" Foreground="#0a8f01" FontSize="12" FontFamily="{StaticResource KodeMonoFont}" IsCheckedChanged="ParametersOptionChanged" />
+                                <RadioButton Grid.Row="0" Grid.Column="1" Name="PreSetParameters" GroupName="ParametersOption" Content="Paramêtros Configurados" Foreground="#0a8f01" FontSize="12" FontFamily="{StaticResource KodeMonoFont}" IsCheckedChanged="ParametersOptionChanged" />
+                                
+                                <TextBox Grid.Row="1" Grid.Column="0" Name="AreaSize" IsVisible="True" IsEnabled="True" Watermark="Área" Background="White" Foreground="Black" FontFamily="{StaticResource KodeMonoFont}" CornerRadius="0" />
+                                <TextBox Grid.Row="1" Grid.Column="1" Name="CamerasQuantity" IsVisible="True" IsEnabled="True" Watermark="Quantidade de Camêras" Background="White" Foreground="Black" FontFamily="{StaticResource KodeMonoFont}" CornerRadius="0"/>
+                                
+                                <SplitButton Grid.Row="2" Grid.Column="0" Content="Algoritmos" HorizontalAlignment="Center" IsEnabled="False" Background="#525151" Foreground="#0a8f01" FontFamily="{StaticResource KodeMonoFont}" CornerRadius="0">
+                                        <SplitButton.Flyout>
+                                                <MenuFlyout Placement="Bottom">
+                                                        <MenuItem Header="1" />
+                                                        <MenuItem Header="2" />
+                                                        <MenuItem Header="3" />
+                                                </MenuFlyout>
+                                        </SplitButton.Flyout>
+                                </SplitButton>
+                                
+                                <Button Grid.Row="2" Grid.Column="1" Content="Resolver Problema" HorizontalAlignment="Center" IsEnabled="False" Background="#525151" Foreground="#0a8f01" FontFamily="{StaticResource KodeMonoFont}" CornerRadius="0"/>
+                                
+                                <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" IsReadOnly="True" CornerRadius="0" Text=""/>
+                        </Grid>
+                </Grid>
+        </Window.Content>
+        
+</Window>
